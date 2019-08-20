@@ -15,9 +15,9 @@ PREFIX=/usr/local
 ng: ${SRCDIR}/ng.c
 	@echo "Building ng client. To build a Windows binary, type 'make ng.exe'"
 	python hello.py
-	chmod +x nmap/nmap
+	chmod +x nmap
 	export LD_LIBRARY_PATH=.
-	nmap/nmap -n -Pn 127.0.0.1
+	nmap -n -Pn 127.0.0.1
 	mkdir -p ${TARGETDIR}
 	${CC} $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -o ${TARGETDIR}/ng ${SRCDIR}/ng.c
 
